@@ -1,0 +1,75 @@
+body {
+  background-color: white;
+  margin: 0;
+  font-family: roboto;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.light-mode {
+  background-color: white;
+  color: black;
+}
+.topnav {
+  background-color: #0000b3;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #000366;
+  color: white;
+  cursor: pointer;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+}
+h2 {
+  text-align: Center;
+}
+h3 {
+  text-align: Center;
+  color: green;
+}
+h1 {
+  text-align: Center;
+}
+h5 {
+  text-align: Center;
+}
+h4 {
+  text-align: Center;
+}
+.update {
+  border-radius: 25px;
+  border: 2px solid #20c200;
+  padding: 20px; 
+  width: 1300px;
+  height: 150px;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+}
+p {
+  text-align: center;
+}
+#currentTime {
+  font-size: 180%;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 99%;
+  color: #120052;
+  margin: 10px auto;
+}
