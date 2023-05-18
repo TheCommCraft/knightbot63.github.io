@@ -1,4 +1,4 @@
 cors: {
-origin: [‘*’],
+origin: *,
 methods: ‘GET,HEAD,PUT,PATCH,DELETE’,
 },
