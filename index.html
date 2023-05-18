@@ -31,14 +31,25 @@
 <p>4/12/23: Updated dark mode, adding other things.</p>
 <p>5/1/23: Fixed a bug involving the favicon.png not appearing on most devices.</p></div>
 <h4 id="DarkModetext">Follow count (scratch):</h4>
-<h1 id="followcount">count</h1>
+<h1 id="followcount">Loading...</h1>
 <script>
 function choose(choices) {
   var index = Math.floor(Math.random() * choices.length);
   return choices[index];
 }
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
 var randomphrase = document.getElementById("randomphrase").childNodes[0];
 var followcount = document.getElementById("followcount").childNodes[0];
+httpGetAsync("https://scratchdb.lefty.one/v3/user/info/knightbot63", function (out) {followcount.data = JSON.parse(out).statistics.followers;});
 randomphrase.data = choose([
   "Have a good day!", 
   "Have fun!", 
