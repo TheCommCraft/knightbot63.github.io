@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Website I made</title>
+  <link rel="shortcut icon" href="static/myIcon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="static/home.css" />
+</head>
+<body onload="startTime()">
+<div class="topnav">
+  <a href="https://knightbot63.repl.co">Knightbot63's Website</a>
+  <a onclick=darkMode()>Dark Mode</a>
+  <a href="/about">About</a>
+  <a href="/shop">Product Shop</a>
+  <a href="/about_me">About Me!</a>
+</div>
+<h2>Welcome!</h2>
+<h3 id="randomphrase">random</h3>
+<h5 id="currentTime"></h5>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h4 id="DarkModetext">Announcements/Updates:</h4>
+<div class="update"><p>4/6/23: Introducing announcements! The Way to find and see updates on this website on the go! This new feature will include: Updates, Changes, and More!</p>
+<p>4/7/23: This will eventually change to just HTML with no Python Flask applications.</p>
+<p>4/12/23: Updated dark mode, adding other things.</p>
+<p>5/1/23: Fixed a bug involving the favicon.png not appearing on most devices.</p></div>
+<h4 id="DarkModetext">Follow count (scratch):</h4>
+<h1>{{count}}</h1>
+<script>
+function choose(choices) {
+  var index = Math.floor(Math.random() * choices.length);
+  return choices[index];
+}
+var randomphrase = document.getElementById("randomphrase").childNodes[0];
+randomphrase.data = choose([
+  "Have a good day!", 
+  "Have fun!", 
+  "We don't allow cookies 🥠",
+  "Sing",
+  "Did you know: no.",
+  "This site is 100% ok!",
+  "404: Error getting debug"
+]);
+function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+window.onload = function() {
+  clock();  
+    function clock() {
+    var text = "Time Now: ";
+    var now = new Date();
+    var TwentyFourHour = now.getHours();
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    var mid = 'pm';
+    if(sec < 10) { 
+      sec = "0" + sec; 
+    }
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (hour > 12) {
+      hour = hour - 12;
+    }   
+    if (hour < 10 ) {
+      hour = "0" + hour;
+    }   
+    if(hour==0){ 
+      hour=12;
+    }
+    if(TwentyFourHour < 12) {
+       mid = 'am';
+    }
+  document.getElementById('currentTime').innerHTML =     text + hour+':'+min+':'+sec +' '+mid ;
+    setTimeout(clock, 1000);
+    }
+}
+</script>
+</body>
+</html>
