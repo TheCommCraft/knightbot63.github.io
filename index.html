@@ -49,6 +49,7 @@ function httpGetAsync(theUrl, callback)
 }
 var randomphrase = document.getElementById("randomphrase").childNodes[0];
 var followcount = document.getElementById("followcount").childNodes[0];
+httpGetAsync("https://scratchdb.lefty.one/v3/user/info/knightbot63", function (out) {followcount.data = JSON.parse(out).statistics.followers;});
 var intervalID = window.setInterval(function() {httpGetAsync("https://scratchdb.lefty.one/v3/user/info/knightbot63", function (out) {followcount.data = JSON.parse(out).statistics.followers;});}, 5000);
 randomphrase.data = choose([
   "Have a good day!", 
