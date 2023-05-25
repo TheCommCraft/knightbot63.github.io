@@ -1,98 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Product Shop</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product Shop</title>
+  <link rel="shortcut icon" href="static/myIcon.png" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="https://speedwaysingapore.github.io/static/home.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 20px auto;
-      padding: 20px;
-    }
-
-    .product {
+    .product-container {
       display: flex;
-      align-items: center;
-      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .product img {
-      width: 100px;
-      height: 100px;
-      margin-right: 20px;
-    }
-
-    .product .info {
-      flex-grow: 1;
-    }
-
-    .product h2 {
-      margin: 0;
-    }
-
-    .product p {
-      margin-top: 10px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
+    
+    .product-card {
+      width: 300px;
+      margin: 20px;
       padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
       text-align: center;
+    }
+    
+    .product-card img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    
+    .product-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .product-card p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+    
+    .product-card button {
+      background-color: #04AA6D;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .product-card button:hover {
+      background-color: #039360;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Digital Product Shop</h1>
-  </header>
+<div class="topnav">
+  <a href="https://speedwaysingapore.github.io">Knightbot63's Website</a>
+  <a onclick="darkMode()">Dark Mode</a>
+  <a href="https://speedwaysingapore.github.io/about.html">About</a>
+  <a href="https://speedwaysingapore.github.io/about_me.html">About Me!</a>
+</div>
 
-  <div class="container">
-    <div class="product">
-      <img src="product1.jpg" alt="Product 1">
-      <div class="info">
-        <h2>Product 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
+<script>
+  function darkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }
+</script>
 
-    <div class="product">
-      <img src="product2.jpg" alt="Product 2">
-      <div class="info">
-        <h2>Product 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
+<h1>Welcome to our Product Shop</h1>
 
-    <div class="product">
-      <img src="product3.jpg" alt="Product 3">
-      <div class="info">
-        <h2>Product 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
+<div class="product-container">
+  <div class="product-card">
+    <img src="product1.jpg" alt="Product 1">
+    <h3>Product 1</h3>
+    <p>Description of Product 1</p>
+    <button>Add to Cart</button>
   </div>
 
-  <footer>
-    &copy; 2023 Digital Product Shop. All rights reserved.
-  </footer>
+  <div class="product-card">
+    <img src="product2.jpg" alt="Product 2">
+    <h3>Product 2</h3>
+    <p>Description of Product 2</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="product3.jpg" alt="Product 3">
+    <h3>Product 3</h3>
+    <p>Description of Product 3</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <!-- Add more product cards as needed -->
+</div>
+
 </body>
 </html>
