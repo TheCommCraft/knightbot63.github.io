@@ -10,14 +10,16 @@
   <style>
     .product-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
     .product-container blockquote {
       background-color: #f5f5f5;
       border-left: 4px solid #ddd;
       padding: 10px;
       margin: 10px 0;
+      width: 400px; /* Adjust the width as desired */
+      max-width: 100%; /* Ensures the blockquote doesn't exceed the container width */
     }
 
     .product-container blockquote p.bb-quote-author {
