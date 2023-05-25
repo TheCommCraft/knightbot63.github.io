@@ -86,7 +86,7 @@
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(data,"text/html");
     var order;
-    for (order of Array.prototype.slice.call(xmlDoc.getElementsByClassName("box")[5].children[1].children[1].children[1].childNodes[1].children).slice(3)) {
+    for (order of [...xmlDoc.getElementsByClassName("box")[5].children[1].children[1].children[1].childNodes[1].children].slice(3)) {
       productContainer.appendChild(order);
     }
   }
