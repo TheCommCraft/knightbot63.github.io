@@ -54,7 +54,7 @@ var followcount = document.getElementById("followcount").childNodes[0];
 httpGetAsync("https://scratch.mit.edu/users/knightbot63/followers", function (out) {
   var el = document.createElement( 'html' );
   el.innerHTML = out;
-  followcount.data = "eg";//getElementByXpath(el, "/html/body/div[1]/div[5]/div[2]/div[1]/h2");
+  followcount.data = el.getElementsByClassName("box-head")[0].childNodes[3].lastChild.data.match("\\((.*)\\)")[1];//getElementByXpath(el, "/html/body/div[1]/div[5]/div[2]/div[1]/h2");
 });
 var intervalID = window.setInterval(function() {httpGetAsync("https://scratchdb.lefty.one/v3/user/info/knightbot63", function (out) {followcount.data = JSON.parse(out).statistics.followers;});}, 5000);
 randomphrase.data = choose([
